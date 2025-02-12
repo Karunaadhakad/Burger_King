@@ -1,0 +1,4 @@
+#Dependecies
+/node_modules
+.env
+.env.*

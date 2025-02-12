@@ -1,0 +1,416 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    /* border: 2px solid gold; */
+
+}
+body{
+
+    color: white;
+    animation: fadeIn 1s ease-in-out;
+    background-color: black;
+    background-attachment: fixed;
+    
+}
+/* Add animated stars */
+
+.star{
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: #fff;
+    animation: twinkle 2s infinite;
+    box-shadow:0 0 10px 2px rgba(255,255,255,0.5);
+}
+@keyframes twinkle {
+    0%{
+        opacity: 0.5;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0.5;
+    }
+}
+/* navbar start */
+
+.navbar{
+    animation: slideInFromTop 1s ease-in-out;
+    /* justify-content: space-around; */
+}
+
+#logoimg {
+    height: 50px;
+     width: 50px;
+    animation: rotateIn 1s ease-in-out;
+}
+.navbar .nav a, .social a{
+    color: white;
+    transition: all 0.5s ease;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.navbar .nav .a a{
+    color: red;
+    /* color: rgb(255,140,0); */
+}
+.navbar .nav a:hover, .social a:hover{
+    /* color: rgb(255,140,0); */
+    color: red;
+    text-shadow: 0px 0px 30px red;
+}
+/* New styles for underline effect */
+.navbar .nav a{
+    position: relative;
+    text-decoration: none;
+}
+.navbar .nav a::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: red;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+.navbar .nav a:hover::before{
+    visibility: visible;
+    transform: scaleX(1);
+}
+/* navbar end */
+
+/* Side burger start */
+.burger-toggle img{
+    width: 95%;
+    height: 75%;
+    filter: drop-shadow(63px 90px 392px);
+    animation: fadeInUp 1s ease-in-out 2.5s backwards;
+}
+
+.burger, .burger-toggle{
+    display: flex;
+}
+.burger-toggle img{
+    display: none;
+}
+.burger-toggle img.active{
+    display: block;
+}
+.card{
+    background-color: transparent ;
+   margin-bottom: 20px;
+}
+.burger{
+    /* position: fixed;
+    bottom: 20px;
+    left: 50%;
+    top:10%; */
+    /* transform: translateX(-50%); */
+    display: flex;
+    /* width: 90%;
+    height: 200px; */
+     height: 20vh;
+     width: 60vw;
+    /* padding: 20px; */
+    /* border: 5px solid red; */
+    animation: slideInfoFromBottom 1s ease-in-out 1.5s backwards;
+}
+.burger img{
+    width: 120px;
+    height: 120px;
+    /* margin-left: 50px; */
+    /* margin-right: 50px; */
+    object-fit: cover;
+    /* border: 2px solid white;  */
+    transition: transform 0.3s ease;
+    animation: fadeInUp 1s ease-in-out 2s backwards;
+}
+.burger img:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255,255,255,0.5);
+}
+/* Side burger end */
+
+  /* content start */
+
+.content{
+    margin-top:50px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.content h1{
+    font-size: 3.5rem;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.content p{
+    width: 60%;
+    animation: fadeInUp 1s ease-in-out 1s backwards;
+}
+  /* content end */
+
+
+/* Animation */
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+    
+}
+
+@keyframes fadeInUp {
+    from{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}
+
+@keyframes slideInFromTop {
+    from{
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}
+
+@keyframes slideInFromBottom{
+    from{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+}
+@keyframes rotateIn {
+    from{
+        opacity: 0;
+        transform: rotate3d(0,0,1,-200deg);
+    }
+    to{
+        opacity: 1;
+        transform:none;
+    }
+    
+}
+/* media query */
+@media (min-width: 320px) and (max-width: 430px) {
+   .card img{
+    width: 150px;
+    height: 150px;
+    margin-top: 10px;
+
+   }
+   .card{
+    margin-left:90px;
+    margin-bottom: 10px;
+
+   }
+   .content{
+    margin-top:30px;
+    
+}
+
+.content h1{
+    font-size: 2rem;
+
+}
+
+.content p{
+  width: 100%;
+}
+}
+@media (min-width: 767px) and (max-width: 1025px) {
+.burger-toggle img{
+                         
+                         height: 300px;
+                         width: 300px;
+                         margin-left: 150px;
+                        
+}
+.content{
+    margin-top:10px;
+    width: 100%;
+    
+}
+.content h1{
+  font-size: 2rem;
+
+}
+
+.content p{
+  font-size: 1.1rem;
+   width: 100%;
+}
+.burger{
+    width: 90vw;
+    margin-left: 10px;
+}
+.card img{
+    width: 150px;
+    height: 150px;
+    margin-top: 30px;
+
+   }
+  
+}
+  .footer{
+    margin-top: 40px;
+   
+  }
+  .footer__bar {
+    padding: 1rem;
+    font-size: 0.9rem;
+    height: 30px;
+    width: 100%;
+    color: var(--text-light);
+    text-align: center;
+
+  }
+  @media (min-width: 320px) and (max-width: 625px) {
+    .footer__bar {    
+      margin-top: 580px;
+    }
+  }
+  @media (min-width: 766px) and (max-width: 1025px) {
+   
+  }
+
+  /* Global Styles */
+/* body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .hero {
+    background: url('/images/hero-bg.jpg') no-repeat center center/cover;
+    color: white;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } */
+  
+  /* .card img {
+    height: 200px;
+    object-fit: cover;
+  } */
+  
+  /* footer {
+    background-color: #222;
+    color: #ccc;
+    font-size: 0.9rem;
+  }
+  
+
+  body {
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+  } */
+  
+  /* .card {
+    border-radius: 10px;
+  }
+  
+  .card-header {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .card-footer a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .card-footer a:hover {
+    text-decoration: underline;
+  }
+
+  .card img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  } */
+
+  .profile-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .profile-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .btn-primary, .btn-secondary {
+    width: 100%;
+  }
+
+  .forgot-password-container {
+    max-width: 400px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: auto;
+  }
+  .forgot-password-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .btn-primary {
+    width: 100%;
+  }
+
+  #message{
+    margin-left: 458px;
+  }
+
+  .orderName{
+    font-size: 19px;
+    font-weight: bold;
+  }
+
+  .orderDetail{
+    font-size: 15px;
+    color: orangered;
+    font-weight: 400;
+  }
+
+  .deleteOrder{
+    text-decoration: none;
+    background-color: #007bff;
+    color:white;
+    border-radius: 6px;
+    padding-top: 6px;
+    padding-bottom: 9px;
+    padding-left: 9px;
+    padding-right: 9px;
+  }
