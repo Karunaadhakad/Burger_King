@@ -1,5 +1,5 @@
 
-import express from 'express';
+import express, { request, response } from 'express';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import { userRegisterController,userVerifyEmailController,userLoginController,userLogoutController,userOrderDeleteController,userProfileUpdateController } from '../controller/userController.js';
@@ -32,6 +32,9 @@ let authenticateJWT = (request,response,next)=>{
         response.render("UserLogin.ejs",{message:'Something went wrong in jwt'});
     }
 }
+userRouter.get("/",(request,response)=>{
+    response.render("index.ejs");
+});
 userRouter.post("/updateProfile",userProfileUpdateController)
 userRouter.get("/UserLogin",(request,response)=>{
     response.render("UserLogin.ejs",{message:''});
