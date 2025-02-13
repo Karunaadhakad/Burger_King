@@ -10,7 +10,8 @@ name:{
 },
 email:{
     type:String,
-    required:true
+    required:true,
+    Unique:true
 },
 password:{
     type: String,

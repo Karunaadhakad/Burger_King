@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
 import url from "../database/connection.js";
-mongoose.connect(url);
+mongoose.connect(url,{
+    useNewUrlParser:true,
+    useUnifiedTopology:true,
+    tls:true
+});
 const AdminSchema = mongoose.Schema({
     email:{
         type:String,
