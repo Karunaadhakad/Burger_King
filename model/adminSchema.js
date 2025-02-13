@@ -3,7 +3,7 @@ import url from "../database/connection.js";
 mongoose.connect(url,{
     useNewUrlParser:true,
     useUnifiedTopology:true,
-    tls:true
+    serverSelectionTimeoutMS:5000,
 });
 const AdminSchema = mongoose.Schema({
     email:{
