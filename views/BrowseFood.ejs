@@ -17,40 +17,85 @@
 </head>
 <body >
 <!--  -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-          <img src="images/logo.png" alt="Logo" id="logoimg" width="100">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mx-auto">
-              <li class="nav-item">
-                  <a class="nav-link" href="/user/UserHome">Home</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="/user/order">Order</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="/user/BrowseFood">Menu</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link d-flex align-items-center" href="/user/cart">
-                      Cart <img src="/images/icons8-cart.gif" alt="Cart" class="ms-1" width="20">
-                      <span class="badge bg-primary ms-1"><%=cartCount%></span>
-                  </a>
-              </li>
+<div class="container">
+  <div class="container-fluide">
+  <nav class="navbar navbar-expand-lg ">
+     <div class="container-fluid">
+       
+       <a class="navbar-brand" href="#"><img src="images/logo.png" alt="" id="logoimg"></a>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item  ">
+            <a class="nav-link" href="/user/UserHome">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/user/order">Order</a>
+          </li>
+          <li class="nav-item a">
+            <a class="nav-link" href="/user/BrowseFood">Menu</a>
+          </li>
+          <li>
+            <a class="nav-item" href="/user/cart" style="float: right; margin: 5px; padding: 4px;">
+             Cart <img src="/images/icons8-cart.gif" alt=""><span class="badge bg-primary"><%=cartCount%></span>
+            </a>
+          </li>
+        </ul>
+        <div class="social">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item ">
+          <a href="/user/UserLogout" class="btn btn-danger rounded-pill px-3 d-none d-lg-block">Logout</a>
+          <!-- <a href="/user/UserLogout">Logout<i class="fa fa-arrow-right px-2 btn btn-danger rounded-pill px-3 d-none d-lg-block"></i></a> -->
+            </li>
+            <li class="nav-item">
+            <a href=""><i class="fa-solid fa-cart-shopping px-2"></i></a>
+            </li>
+            <li class="nav-item">
+              <a href=""><i class="fa-solid fa-house px-2"></i></a>
+            </li>
           </ul>
-          <div class="d-flex align-items-center">
-              <a href="/user/UserLogout" class="btn btn-danger rounded-pill px-3 me-2">Logout</a>
-              <a href="#" class="text-dark me-2"><i class="fa-solid fa-cart-shopping"></i></a>
-              <a href="#" class="text-dark"><i class="fa-solid fa-house"></i></a>
-          </div>
+        </div>
       </div>
+   </nav> 
   </div>
-</nav>
+</div>
+   <!--  -->
+  <!-- Page Header -->
+  <header class=" text-white text-center py-1 ">
+    <div class="container">
+      <h3>Welcome <%= email%> to  Burger Station</h3>
+      <!-- <h2>Browse Food</h2> -->
+      <p class="bg-danger">Explore our delicious Burger!</p>
+    </div>
+  </header>
+  <!-- <a class="nav-item" href="/user/cart" style="float: right; margin: 5px; padding: 4px;">
+    <img src="/images/icons8-cart.gif" alt=""><span class="badge bg-primary"><%=cartCount%></span>
+  </a> -->
+  <!-- Food Categories Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Food Card 1 -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="/images/image.jpg" class="card-img-top" alt="Cheese Burger">
+            <div class="card-body">
+              <h5 class="card-title">Cheese Burger</h5>
+              <p class="card-text">Delicious cheesy burger with fresh ingredients.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="text-primary fw-bold">$10</span>
+                <form action="/user/cart/add" method="POST">
+                  <input type="hidden" name="userId" value="123"> <!-- User ID -->
+                  <input type="hidden" name="name" value="Cheese Burger">
+                  <input type="hidden" name="price" value="10">
+                  <button type="submit" class="btn btn-light btn-sm">Add to Cart</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- Food Card 2 -->
         <div class="col-md-4">
           <div class="card">
