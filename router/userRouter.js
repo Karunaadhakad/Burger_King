@@ -32,7 +32,7 @@ let authenticateJWT = (request,response,next)=>{
         response.render("UserLogin.ejs",{message:'Something went wrong in jwt'});
     }
 }
-userRouter.get("/",(request,response)=>{
+userRouter.get("/userHome",(request,response)=>{
     response.render("index.ejs");
 });
 userRouter.post("/updateProfile",userProfileUpdateController)
