@@ -18,26 +18,26 @@ let authenticateJWT = (request,response,next)=>{
           
            jwt.verify(token,admin_secret_key,(error,payload)=>{
               if(error){
-                response.render("adminLogin.ejs",{message:'Plz Login First'});
+                response.render("AdminLogin.ejs",{message:'Plz Login First'});
               }else{
                 request.payload=payload;
                 next();
               }
            });
     }catch(error){
-        response.render("adminLogin.ejs",{message:'Something went wrong in jwt'});
+        response.render("AdminLogin.ejs",{message:'Something went wrong in jwt'});
     }
 }
 
 adminRouter.get("/",(request,response)=>{
-    response.render("adminLogin.ejs",{message:''});
+    response.render("AdminLogin.ejs",{message:''});
 });
 
 adminRouter.get("/adminHome",authenticateJWT,(request,response)=>{
     response.render("adminHome.ejs",{email:request.payload.email});
 });
 
-adminRouter.post("/adminLogin",adminLoginController);
+adminRouter.post("/AdminLogin",adminLoginController);
 adminRouter.get("/adminLogout",adminLogoutController);
 adminRouter.get("/adminUserUpdate",adminUserUpdateController);
 adminRouter.get("/adminUserList",authenticateJWT,adminUserListController);
