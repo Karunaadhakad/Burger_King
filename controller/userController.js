@@ -84,7 +84,7 @@ export const userRegisterController = async(request,response)=>{
             diet:diet,
             interests:formattedInterests
            }
-           const mailcontent  = `Hello ${email}, <br> This is a verification mail by Burger King (Fast food) system.You needs to verify yourself by clicking on the below link.<br><a href='http://localhost:3000/user/verifyEmail?email=${email}'>Click Here To Verify</a>`;
+           const mailcontent  = `Hello ${email}, <br> This is a verification mail by Burger King (Fast food) system.You needs to verify yourself by clicking on the below link.<br><a href='https://burger-king-wez1.onrender.com/user/verifyEmail?email=${email}'>Click Here To Verify</a>`;
 
            mailer.mailer(mailcontent,email,async(info)=>{
                  if(info){
