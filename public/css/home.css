@@ -105,8 +105,7 @@ body{
 /* //.card */
 .card{ 
     background-color: transparent ;
-    /* background-color: red; */
-   margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 .burger{
     /* position: fixed;
