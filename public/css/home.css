@@ -224,8 +224,13 @@ body{
    }
    /* .card */
    .card{
-    margin-left:80px;
+   /* margin-left:80px; */
 
+    margin-bottom: 10px;
+
+   }
+   .burger .card{
+    margin-left:80px;
     margin-bottom: 10px;
 
    }
