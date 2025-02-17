@@ -224,6 +224,7 @@ body{
    .card{
     /* margin-left:90px; */
     justify-content: center;
+    align-items: center;
     margin-bottom: 10px;
 
    }
