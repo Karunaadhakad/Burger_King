@@ -102,7 +102,8 @@ body{
 .burger-toggle img.active{
     display: block;
 }
-.card{
+/* //.card */
+.burger .card{ 
     background-color: transparent ;
    margin-bottom: 20px;
 }
@@ -221,9 +222,10 @@ body{
     margin-top: 10px;
 
    }
-   .card{
+   /* .card */
+   .burger .card{
     margin-left:80px;
-   
+
     margin-bottom: 10px;
 
    }
