@@ -14,7 +14,7 @@ const orderSchema = mongoose.Schema({
     },
     userId:{
         type:String,
-        // unique:true
+        unique:true
     },
     name:{
         type:String
