@@ -55,7 +55,8 @@ export const placeOrderController = async(request,response)=>{
       try {
       // console.log("request.body ",request.body);
         const userId = request.body.userId;
-        const item = await cartSchema.findOne({userId});
+        // const item = await cartSchema.findOne({userId});
+        const item = await cartSchema.find({userId});
         const email = item.email;
         // console.log("item ",email);
         const currentDate = new Date();
@@ -78,7 +79,8 @@ export const placeOrderController = async(request,response)=>{
         if(error.code==11000){
           const cart = await cartSchema.find({email:request.payload.email});
           const cartCount = cart.length;
-          response.render("viewCart",{cart,cartCount,message:"already ordered"});
+          // response.render("viewCart",{cart,cartCount,message:"already ordered"});
+          response.render("viewOrder",{email,orders});
         }
       }
 }
