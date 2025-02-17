@@ -75,11 +75,11 @@ export const placeOrderController = async(request,response)=>{
         response.render("viewOrder",{email,orders});
       } catch (error) {
         console.log("error in placeorderController ",error);
-        if(error.code==11000){
-          const cart = await cartSchema.find({email:request.payload.email});
-          const cartCount = cart.length;
-          response.render("viewCart",{cart,cartCount,message:"already ordered"});
-        }
+        // if(error.code==11000){
+        //   const cart = await cartSchema.find({email:request.payload.email});
+        //   const cartCount = cart.length;
+        //   response.render("viewCart",{cart,cartCount,message:"already ordered"});
+        // }
       }
 }
 
