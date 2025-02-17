@@ -241,7 +241,7 @@ body{
 }
 }
 @media  (max-width: 600px) {
-  .navbar-toggler button {
+  .navbar-toggler-icon{
     background-color: #FF5733; /* Orange */
   }
 }
