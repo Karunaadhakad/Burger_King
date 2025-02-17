@@ -240,13 +240,18 @@ body{
   width: 100%;
 }
 }
+@media screen and (max-width: 600px) {
+  .navbar-toggler-icon {
+    background-color: #FF5733; /* Orange */
+  }
+}
 @media (min-width: 767px) and (max-width: 1025px) {
 .burger-toggle img{
                          
                          height: 300px;
                          width: 300px;
                          margin-left: 150px;
-                        color: #fff;
+                       
 }
 .content{
     margin-top:10px;
