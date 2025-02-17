@@ -99,7 +99,15 @@
             <div class="card-body">
               <h5 class="card-title">Cheese Burger</h5>
               <p class="card-text">$10</p>
-              <button class="btn btn-light add-to-cart">Add to Cart</button>
+              <!--  -->
+              <form action="/user/cart/add" method="POST">
+                <input type="hidden" name="userId" value="123"> <!-- User ID -->
+                <input type="hidden" name="name" value="Cheese Burger">
+                <input type="hidden" name="price" value="10">
+                <button type="submit" class="btn btn-light btn-sm">Add to Cart</button>
+              </form>
+              <!--  -->
+              <!-- <button class="btn btn-light add-to-cart">Add to Cart</button> -->
             </div>
           </div>
         </div>
